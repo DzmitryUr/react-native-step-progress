@@ -1,6 +1,6 @@
-# react-native-step-indicator
+# react-native-step-progress
 
-A simple react-native implementation of step indicator widget compatible with the ViewPager and ListView.
+A simple react-native implementation of step indicator widget compatible with the ViewPager and ListView. Package was cloned from [step-indicator](https://github.com/24ark/react-native-step-indicator) and changed to functional component and adopted to newest React/React Native versions.
 
 Features
 
@@ -9,24 +9,12 @@ Features
   - Supports vertical and horizontal orientation
   - Supports animation between steps
 
-
-![alt tag](art/HorizontalStepIndicator.gif) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![alt tag](art/VerticalStepIndicator.gif)
- [example/HorizontalStepIndicatorExample.js](example/HorizontalStepIndicatorExample.js)   &nbsp;&nbsp;&nbsp;&nbsp; [example/VerticalStepIndicatorExample.js](example/VerticalStepIndicatorExample.js)
-
-### Example
-```sh
-$ cd example
-$ npm i
-$ react-native run-ios   // For ios
-$ react-native run-android   // For Android
-```
-
 ### Installation
-``npm install react-native-step-indicator --save``
+``npm install react-native-step-progress``
 
 ### Usage
 ```javascript
-import StepIndicator from 'react-native-step-indicator';
+import StepProgress from 'react-native-step-progress';
 
 const labels = ["Cart","Delivery Address","Order Summary","Payment Method","Track"];
 const customStyles = {
@@ -54,24 +42,18 @@ const customStyles = {
 }
 
 
-constructor() {
-    this.state = {
-        currentPosition: 0
-    }
-}
+const [currentPosition, setCurrentPosition] = useState(0)
 
-render() {
-  return (
-    <StepIndicator
-         customStyles={customStyles}
-         currentPosition={this.state.currentPosition}
-         labels={labels}
-    />
-  )
-}
+return (
+  <StepProgress
+      customStyles={customStyles}
+      currentPosition={currentPosition}
+      labels={labels}
+  />
+)
 
 onPageChange(position){
-    this.setState({currentPosition: position});
+  setCurrentPosition(position};
 }
 //...
 ```
@@ -126,5 +108,4 @@ If you'd like to see something added or changed to this module please open a new
 
 ### License
 
- - [Apache-2.0](https://github.com/24ark/react-native-step-indicator/blob/master/LICENSE).  © Arkit Vora
- - [Apache-2.0](https://github.com/DzmitryUr/react-native-step-indicator/blob/master/LICENSE).  © Dzmitry Urbanovich
+- [Apache-2.0](https://github.com/DzmitryUr/react-native-step-indicator/blob/master/LICENSE).  © Arkit Vora, © Dzmitry Urbanovich
