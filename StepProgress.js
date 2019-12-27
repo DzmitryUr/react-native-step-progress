@@ -17,8 +17,8 @@ const STEP_STATUS = {
 export default function StepProgress(props) {
   
     const defaultStyles = {
-      stepProgressSize: 30,
-      currentStepProgressSize: 40,
+      stepIndicatorSize: 30,
+      currentStepIndicatorSize: 40,
       separatorStrokeWidth: 3,
       separatorStrokeUnfinishedWidth: 0,
       separatorStrokeFinishedWidth: 0,
@@ -29,14 +29,14 @@ export default function StepProgress(props) {
       stepStrokeUnFinishedColor: '#4aae4f',
       separatorFinishedColor: '#4aae4f',
       separatorUnFinishedColor: '#a4d4a5',
-      stepProgressFinishedColor: '#4aae4f',
-      stepProgressUnFinishedColor: '#a4d4a5',
-      stepProgressCurrentColor: '#ffffff',
-      stepProgressLabelFontSize: 15,
-      currentStepProgressLabelFontSize: 15,
-      stepProgressLabelCurrentColor: '#000000',
-      stepProgressLabelFinishedColor: '#ffffff',
-      stepProgressLabelUnFinishedColor: 'rgba(255,255,255,0.5)',
+      stepIndicatorFinishedColor: '#4aae4f',
+      stepIndicatorUnFinishedColor: '#a4d4a5',
+      stepIndicatorCurrentColor: '#ffffff',
+      stepIndicatorLabelFontSize: 15,
+      currentStepIndicatorLabelFontSize: 15,
+      stepIndicatorLabelCurrentColor: '#000000',
+      stepIndicatorLabelFinishedColor: '#ffffff',
+      stepIndicatorLabelUnFinishedColor: 'rgba(255,255,255,0.5)',
       labelColor: '#000000',
       labelSize: 13,
       labelAlign: 'center',
@@ -50,10 +50,10 @@ export default function StepProgress(props) {
 
     const progressAnim = new Animated.Value(0)
     const sizeAnim = new Animated.Value(
-      customStyles.stepProgressSize
+      customStyles.stepIndicatorSize
     )
     const borderRadiusAnim = new Animated.Value(
-      customStyles.stepProgressSize / 2
+      customStyles.stepIndicatorSize / 2
     )
 
   function stepPressed (position) {
@@ -180,15 +180,15 @@ export default function StepProgress(props) {
           }
         }
         style={[
-          styles.stepProgressContainer,
+          styles.stepIndicatorContainer,
           direction === 'vertical'
             ? {
               flexDirection: 'column',
-              width: customStyles.currentStepProgressSize
+              width: customStyles.currentStepIndicatorSize
             }
             : {
               flexDirection: 'row',
-              height: customStyles.currentStepProgressSize
+              height: customStyles.currentStepIndicatorSize
             }
         ]}
       >
@@ -268,7 +268,7 @@ export default function StepProgress(props) {
     switch (getStepStatus(position)) {
       case STEP_STATUS.CURRENT: {
         stepStyle = {
-          backgroundColor: customStyles.stepProgressCurrentColor,
+          backgroundColor: customStyles.stepIndicatorCurrentColor,
           borderWidth: customStyles.currentStepStrokeWidth,
           borderColor: customStyles.stepStrokeCurrentColor,
           height: sizeAnim,
@@ -276,41 +276,41 @@ export default function StepProgress(props) {
           borderRadius: borderRadiusAnim
         }
         indicatorLabelStyle = {
-          fontSize: customStyles.currentStepProgressLabelFontSize,
-          color: customStyles.stepProgressLabelCurrentColor
+          fontSize: customStyles.currentStepIndicatorLabelFontSize,
+          color: customStyles.stepIndicatorLabelCurrentColor
         }
 
         break
       }
       case STEP_STATUS.FINISHED: {
         stepStyle = {
-          backgroundColor: customStyles.stepProgressFinishedColor,
+          backgroundColor: customStyles.stepIndicatorFinishedColor,
           borderWidth: customStyles.stepStrokeWidth,
           borderColor: customStyles.stepStrokeFinishedColor,
-          height: customStyles.stepProgressSize,
-          width: customStyles.stepProgressSize,
-          borderRadius: customStyles.stepProgressSize / 2
+          height: customStyles.stepIndicatorSize,
+          width: customStyles.stepIndicatorSize,
+          borderRadius: customStyles.stepIndicatorSize / 2
         }
         indicatorLabelStyle = {
-          fontSize: customStyles.stepProgressLabelFontSize,
-          color: customStyles.stepProgressLabelFinishedColor
+          fontSize: customStyles.stepIndicatorLabelFontSize,
+          color: customStyles.stepIndicatorLabelFinishedColor
         }
         break
       }
 
       case STEP_STATUS.UNFINISHED: {
         stepStyle = {
-          backgroundColor: customStyles.stepProgressUnFinishedColor,
+          backgroundColor: customStyles.stepIndicatorUnFinishedColor,
           borderWidth: customStyles.stepStrokeWidth,
           borderColor: customStyles.stepStrokeUnFinishedColor,
-          height: customStyles.stepProgressSize,
-          width: customStyles.stepProgressSize,
-          borderRadius: customStyles.stepProgressSize / 2
+          height: customStyles.stepIndicatorSize,
+          width: customStyles.stepIndicatorSize,
+          borderRadius: customStyles.stepIndicatorSize / 2
         }
         indicatorLabelStyle = {
           overflow: 'hidden',
-          fontSize: customStyles.stepProgressLabelFontSize,
-          color: customStyles.stepProgressLabelUnFinishedColor
+          fontSize: customStyles.stepIndicatorLabelFontSize,
+          color: customStyles.stepIndicatorLabelUnFinishedColor
         }
         break
       }
@@ -349,9 +349,9 @@ export default function StepProgress(props) {
     }
     const animateToPosition =
       (progressBarSize / (stepCount - 1)) * position
-    sizeAnim.setValue(customStyles.stepProgressSize)
+    sizeAnim.setValue(customStyles.stepIndicatorSize)
     borderRadiusAnim.setValue(
-      customStyles.stepProgressSize / 2
+      customStyles.stepIndicatorSize / 2
     )
     Animated.sequence([
       Animated.timing(progressAnim, {
@@ -360,11 +360,11 @@ export default function StepProgress(props) {
       }),
       Animated.parallel([
         Animated.timing(sizeAnim, {
-          toValue: customStyles.currentStepProgressSize,
+          toValue: customStyles.currentStepIndicatorSize,
           duration: 100
         }),
         Animated.timing(borderRadiusAnim, {
-          toValue: customStyles.currentStepProgressSize / 2,
+          toValue: customStyles.currentStepIndicatorSize / 2,
           duration: 100
         })
       ])
@@ -392,7 +392,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: 'transparent'
   },
-  stepProgressContainer: {
+  stepIndicatorContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-around',
