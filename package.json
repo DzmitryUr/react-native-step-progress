@@ -1,15 +1,15 @@
 {
-  "name": "react-native-step-indicator",
-  "version": "0.0.11",
+  "name": "react-native-step-progress",
+  "version": "1.0.0",
   "description": "A simple react-native implementation of step indicator widget compatible with the ViewPager, ListView and Flatlist",
-  "main": "StepIndicator.js",
+  "main": "StepProgress.js",
   "types": "index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/24ark/react-native-step-indicator.git"
+    "url": "git+https://github.com/DzmitryUr/react-native-step-progress"
   },
   "keywords": [
     "react-component",
@@ -21,13 +21,13 @@
     "scrollview",
     "listview"
   ],
-  "author": "Arkit Vora",
+  "author": "Dzmitry Urbanovich",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/24ark/react-native-step-indicator/issues"
+    "url": "https://github.com/DzmitryUr/react-native-step-progress/issues"
   },
-  "homepage": "https://github.com/24ark/react-native-step-indicator#readme",
+  "homepage": "https://github.com/DzmitryUr/react-native-step-progress#readme",
   "dependencies": {
-    "prop-types": "^15.6.0"
+    "prop-types": "^15.7.2"
   }
 }

@@ -127,3 +127,4 @@ If you'd like to see something added or changed to this module please open a new
 ### License
 
  - [Apache-2.0](https://github.com/24ark/react-native-step-indicator/blob/master/LICENSE).  © Arkit Vora
+ - [Apache-2.0](https://github.com/DzmitryUr/react-native-step-indicator/blob/master/LICENSE).  © Dzmitry Urbanovich
