@@ -1,6 +1,6 @@
 # react-native-step-progress
 
-A simple react-native implementation of step indicator widget compatible with the ViewPager and ListView. Package was cloned from [step-indicator](https://github.com/24ark/react-native-step-indicator) and changed to functional component and adopted to newest React/React Native versions.
+A simple react-native implementation of step indicator widget compatible with the ViewPager and ListView. Package was cloned from [step-indicator](https://github.com/24ark/react-native-step-indicator), changed to functional component and adopted to newest React, React Native versions.
 
 Features
 
@@ -11,6 +11,8 @@ Features
 
 ### Installation
 ``npm install react-native-step-progress``
+or
+``yarn add react-native-step-progress``
 
 ### Usage
 ```javascript
@@ -108,4 +110,4 @@ If you'd like to see something added or changed to this module please open a new
 
 ### License
 
-- [Apache-2.0](https://github.com/DzmitryUr/react-native-step-indicator/blob/master/LICENSE).  © Arkit Vora, © Dzmitry Urbanovich
+- [Apache-2.0](https://github.com/DzmitryUr/react-native-step-indicator/blob/master/LICENSE).
