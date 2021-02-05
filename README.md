@@ -55,7 +55,7 @@ return (
 )
 
 onPageChange(position){
-  setCurrentPosition(position};
+  setCurrentPosition(position);
 }
 //...
 ```
